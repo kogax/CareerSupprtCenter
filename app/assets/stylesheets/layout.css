@@ -1,0 +1,16 @@
+body {  
+      background-color: #DDDDDD;  
+  }  
+div#header{     
+    padding:10px 20px 10px 20px;
+  background-color: #333333;
+}  
+div#footer {  
+    color: #fff;
+    text-align: center;  
+    background-color: #333333;
+}  
+  
+div#content {  
+    padding-left:10px;
+ }  

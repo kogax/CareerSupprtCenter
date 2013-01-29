@@ -1,0 +1,59 @@
+<%= form_for(@student) do |f| %>
+<% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% if false %>
+url optionはそのフォームの送信先を示す
+<% end %>
+
+<fieldset>
+<legend>学生情報</legend>
+<div class="field">
+    <%= f.label :学籍番号%><br />
+    <%= f.number_field :school_register_number,placeholder:"08132" %>
+</div>
+<div class="field">
+    <%= f.label :学生名%><br />
+    <%= f.text_field :name,placeholder:"詫間太郎" %>
+</div>
+<div class="field">
+    <%= f.label :学年%><br />
+     <%= f.select(:grade,['本科1年','本科2年','本科3年','本科3年','本科4年','本科5年','専攻科1年','専攻科2年'],{:include_blank=>'選択してください'},{:class => 'pub'}) %>
+</div>
+<div class="field">
+    <%= f.label :出席番号%><br />
+    <%= f.number_field :number,placeholder:"18" %>
+</div>
+<div class="field">
+    <%= f.label :学科%><br />
+    <%= f.select(:subject,['情報工学科','制御工学科','通信工学科','電子工学科'],{:include_blank=>'選択してください'},{:class => 'pub'}) %>
+</div>
+<div class="field">
+    <%= f.label :携帯電話番号%><br />
+    <%= f.telephone_field :phone_number,placeholder:"09012345678" %>
+</div>
+<div class="field">
+    <%= f.label :メールアドレス%><br />
+    <%= f.email_field :email_address,placeholder:"takuma@example.com" %>
+</div>
+<div class="field">
+    <%= f.label :保護者の携帯電話番号%><br />
+    <%= f.text_field :protector_phone_number,placeholder:"09012345678" %>
+</div>
+<div class="field">
+    <%= f.label :緊急連絡先%><br />
+    <%= f.text_area :emergency_contact_address,placeholder:"○○県△△市□□町123-456" %>
+</div>
+</fieldset>
+
+<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

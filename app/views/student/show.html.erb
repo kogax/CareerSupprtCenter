@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<fieldset>
+<legend>学生情報</legend>
+<p>
+    <b>学籍番号:</b>
+    <%=@student.school_register_number%>
+</p>
+<p>
+    <b>学生名:</b>
+    <%=@student.name%>
+</p>
+<p>
+    <b>学年:</b>
+     <%=@student.grade %>
+</p>   
+    <b>出席番号:</b>
+    <%=@student.number%>
+<p>
+    <b>学科:</b>
+    <%= @student.subject%>
+</p>
+<p>
+    <b>携帯電話番号:</b>
+    <%= @student.phone_number %>
+</p>
+<p>
+    <b>メールアドレス:</b>
+    <%= @student.email_address%>
+</p>
+<p>
+    <b>保護者の携帯電話番号:</b>
+    <%=@student.protector_phone_number %>
+</p>
+<p>
+    <b>緊急連絡先:</b>
+    <%= @student.emergency_contact_address%>
+</p>
+<%=link_to('編集', edit_student_path) %>
+</fieldset>
+<%=link_to('Back',{ :controller => 'career_support_center' ,:action=>'index'})%>
