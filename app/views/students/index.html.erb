@@ -1,0 +1,34 @@
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>number</th>
+<th>grade</th>
+<th>subject</th>
+<th>phone_number</th>
+<th>emergency_contact_address</th>
+<th>protector_phone_number</th>
+<th>email_address</th>
+<th>school_register_number</th>
+<th>created_at</th>
+<th>updated_at</th>
+</tr>
+</thead>
+
+<tbody>
+<% @students.each do |student| %>
+<tr>
+  <td><%= student.name %></td>
+  <td><%= student.number %></td>
+  <td><%= student.grade %></td>
+  <td><%= student.subject %></td>
+  <td><%= student.phone_number %></td>
+  <td><%= student.emergency_contact_address %></td>
+  <td><%= student.protector_phone_number %></td>
+  <td><%= student.email_address %></td>
+  <td><%= student.school_register_number %></td>
+  <td><%= student.created_at %></td>
+  <td><%= student.updated_at %></td>
+</tr>
+<% end %>
+</tbody>
